@@ -1,7 +1,5 @@
 package BoardLayer;
 
-import javax.swing.text.Position;
-
 public class Board {
 
 	
@@ -61,6 +59,23 @@ public class Board {
 	}
 	
 	
+	public Piece removePiece(position position) {
+		if(!positionExists(position)) {
+			throw new BordException("Posicao nao existente");
+		}
+		if(piece(position) == null) {
+			return null;
+		}
+		
+		Piece aux = piece (position);
+		aux.position = null;
+		pieces[position.getRow()][position.getColumn()] = null;
+		return aux;
+		
+	}
+	
+	
+	
 	public boolean positionExists (int row, int column) {
 		return row >=0 && row < rows    &&  column >= 0 && column < columns;
 		
@@ -80,4 +95,7 @@ public class Board {
 		return piece(position) != null;
 				
 	}
+	
+	
+	
 }
