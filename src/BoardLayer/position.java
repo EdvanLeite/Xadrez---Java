@@ -32,6 +32,14 @@ public class position {
 	public String toString() {
 		return "position: " + row + ", " + column ;
 	}
+
+	public void setRow(Integer row) {
+		this.row = row;
+	}
+
+	public void setColumn(Integer column) {
+		this.column = column;
+	}
 	
 	
 
