@@ -26,11 +26,13 @@ public class ChessMatch {
 		return mat;
 	}
 
+	private void placeNewPiece(char column, int row, ChessPiece piece) {
+		board.PlacePiece(piece, new ChessPosition (column,row).position());
+	}
+	
 	
 	private void initialSetup() {
-		board.PlacePiece(new Rook(board, Color.WHITE), new position (3,5));
-		board.PlacePiece(new King(board, Color.WHITE), new position (0,4));
-		board.PlacePiece(new King(board, Color.BLACK), new position (7,4));
+		placeNewPiece('a',5,new Rook(board, Color.WHITE));
 		
 	}
 	
